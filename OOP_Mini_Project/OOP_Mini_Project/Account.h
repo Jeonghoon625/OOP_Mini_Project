@@ -1,13 +1,14 @@
 #pragma once
+
 #include <iostream>
 #include <cstring>
 
 class Account
 {
 private:
-	int accountNum;
-	char* name;
-	int ballance;
+	int accountNum; // °èÁÂ¹øÈ£
+	char* name; // ¼ºÇÔ
+	int ballance; // ÀÜ¾×
 
 public:
 	Account(const int& accountNum, const char* name, const int& ballance);
