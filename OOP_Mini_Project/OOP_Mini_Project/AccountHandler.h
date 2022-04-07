@@ -11,8 +11,18 @@ private:
 public:
 	AccountHandler();
 
-	int GetMemberNum();
-	void SetMemberNum();
+	void NewAccount(Account* account);
 
+	int GetMemberNum() const;
+
+	int FindAccount(const int& acccountNum);
+
+	void Deposit(const int& accountNum, const int& money);
+
+	void WithDraw(const int& accountNum, const int& money);
+
+	void ShowAllAccountInfo() const;
+
+	~AccountHandler();
 };
 

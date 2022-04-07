@@ -8,6 +8,11 @@ Account::Account(const int& accountNum, const char* name, const int& ballance)
 	this->ballance = ballance;
 }
 
+int Account::GetaccountNum() const
+{
+	return accountNum;
+}
+
 int Account::GetBallance() const
 {
 	return ballance;
@@ -18,7 +23,7 @@ void Account::SetBallance(const int& ballance)
 	this->ballance = ballance;
 }
 
-void Accout::AddBallance(const int& money)
+void Account::AddBallance(const int& money)
 {
 	ballance += money;
 }

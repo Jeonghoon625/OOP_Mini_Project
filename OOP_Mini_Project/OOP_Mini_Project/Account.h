@@ -13,9 +13,15 @@ private:
 public:
 	Account(const int& accountNum, const char* name, const int& ballance);
 
+	int GetaccountNum() const;
+
 	int GetBallance() const;
 
 	void SetBallance(const int& ballance);
+
+	void AddBallance(const int& money);
+
+	void TakeBallance(const int& money);
 
 	void ShowAccountInfo() const;
 
