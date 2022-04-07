@@ -17,9 +17,7 @@ public:
 
 	int GetBallance() const;
 
-	void SetBallance(const int& ballance);
-
-	void AddBallance(const int& money);
+	virtual void AddBallance(const int& money);
 
 	void TakeBallance(const int& money);
 

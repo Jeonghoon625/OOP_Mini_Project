@@ -18,11 +18,6 @@ int Account::GetBallance() const
 	return ballance;
 }
 
-void Account::SetBallance(const int& ballance)
-{
-	this->ballance = ballance;
-}
-
 void Account::AddBallance(const int& money)
 {
 	ballance += money;

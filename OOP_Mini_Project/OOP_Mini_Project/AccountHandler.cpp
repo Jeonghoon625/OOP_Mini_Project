@@ -26,7 +26,7 @@ int AccountHandler::GetMemberNum() const
 	return memberNum;
 }
 
-int AccountHandler::FindAccount(const int& accountNum)
+int AccountHandler::FindAccount(const int& accountNum) const
 {
 	for (int i = 0; i < memberNum; i++)
 	{
@@ -35,7 +35,7 @@ int AccountHandler::FindAccount(const int& accountNum)
 			return i;
 		}
 	}
-
+	
 	return -1;
 }
 
@@ -83,7 +83,7 @@ void AccountHandler::WithDraw(const int& accountNum, const int& money)
 
 void AccountHandler::ShowAllAccountInfo() const
 {
-	if (accountList[0] == NULL)
+	if (GetMemberNum() == 0)
 	{
 		std::cout << "개설된 계좌가 없습니다." << std::endl;
 	}

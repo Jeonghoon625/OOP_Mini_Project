@@ -64,19 +64,57 @@ void NewAccount(AccountHandler& handler)
 	int accountNum = 0;
 	char name[10] = { 0, };
 	int money = 0;
+	int interest = 0;
+	int creditRating = 0;
 
-	std::cout << "\n[계좌개설]" << std::endl;
+	int accountTypeNum = 0;
+	std::cout << "\n[계좌 종류 선택]" << std::endl;
+	std::cout << "1. 보통예금계좌" << std::endl;
+	std::cout << "2. 신용신뢰계좌" << std::endl;
+	std::cout << "선택: ";
+	std::cin >> accountTypeNum;
 	
-	std::cout << "계좌번호 : ";
-	std::cin >> accountNum;
+	switch (accountTypeNum)
+	{
+	case 1:
+		std::cout << "\n[보통예금계좌 개설]" << std::endl;
 
-	std::cout << "이름 : ";
-	std::cin >> name;
+		std::cout << "계좌번호: ";
+		std::cin >> accountNum;
 
-	std::cout << "입금액 : ";
-	std::cin >> money;
+		std::cout << "이름: ";
+		std::cin >> name;
 
-	handler.NewAccount(new Account(accountNum, name, money));
+		std::cout << "입금액: ";
+		std::cin >> money;
+
+		std::cout << "이자율: ";
+		std::cin >> interest;
+
+		handler.NewAccount(new NormalAccount(accountNum, name, money, interest));
+		break;
+
+	case 2:
+		std::cout << "\n[신용신뢰계좌 개설]" << std::endl;
+
+		std::cout << "계좌번호 : ";
+		std::cin >> accountNum;
+
+		std::cout << "이름 : ";
+		std::cin >> name;
+
+		std::cout << "입금액 : ";
+		std::cin >> money;
+
+		std::cout << "이자율: ";
+		std::cin >> interest;
+		
+		std::cout << "신용등급(1toA, 2toB, 3toC): ";
+		std::cin >> creditRating;
+
+		handler.NewAccount(new HighCreditAccount(accountNum, name, money, interest, creditRating));
+		break;
+	}
 }
 
 void Deposit(AccountHandler& handler)

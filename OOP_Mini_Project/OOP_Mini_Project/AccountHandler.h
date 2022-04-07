@@ -1,5 +1,5 @@
 #pragma once
-#include "Account.h"
+#include "HighCreditAccount.h"
 #define ACCOUNT_MAX 10
 
 class AccountHandler
@@ -15,7 +15,7 @@ public:
 
 	int GetMemberNum() const;
 
-	int FindAccount(const int& acccountNum);
+	int FindAccount(const int& acccountNum) const;
 
 	void Deposit(const int& accountNum, const int& money);
 
