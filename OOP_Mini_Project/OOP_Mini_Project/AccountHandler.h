@@ -10,6 +10,7 @@ private:
 
 public:
 	AccountHandler();
+
 	int GetMemberNum();
 	void SetMemberNum();
 

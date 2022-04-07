@@ -18,6 +18,16 @@ void Account::SetBallance(const int& ballance)
 	this->ballance = ballance;
 }
 
+void Accout::AddBallance(const int& money)
+{
+	ballance += money;
+}
+
+void Account::TakeBallance(const int& money)
+{
+	ballance -= money;
+}
+
 void Account::ShowAccountInfo() const
 {
 	std::cout << "\n°èÁÂ¹øÈ£ : " << accountNum << std::endl;
