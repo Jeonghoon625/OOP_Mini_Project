@@ -8,6 +8,14 @@ AccountHandler::AccountHandler() : memberNum(0)
 	}
 }
 
+AccountHandler::AccountHandler(const AccountHandler& copy) : memberNum(copy.memberNum)
+{
+	for (int i = 0; i < ACCOUNT_MAX; i++)
+	{
+		accountList[i] = copy.accountList[i];
+	}
+}
+
 void AccountHandler::NewAccount(Account* account)
 {
 	if (FindAccount(account->GetaccountNum()) < 0)

@@ -23,6 +23,11 @@ HighCreditAccount::HighCreditAccount(const int& accountNum, const char* name, co
 	}
 }
 
+HighCreditAccount::HighCreditAccount(const HighCreditAccount& copy) 
+	: NormalAccount(copy.accountNum, copy.name, copy.ballance, copy.interest), creditRatingResult(copy.creditRatingResult)
+{
+}
+
 void HighCreditAccount::AddBallance(const int& money)
 {
 	NormalAccount::AddBallance(money);

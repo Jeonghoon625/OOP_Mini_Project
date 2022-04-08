@@ -13,8 +13,9 @@ namespace Grade
 
 class HighCreditAccount : public NormalAccount
 {
-private :
+protected :
 	int creditRatingResult;
+	HighCreditAccount(const HighCreditAccount& copy);
 
 public :
 	HighCreditAccount(const int& accountNum, const char* name, const int& ballance, const int& interest, const int& creditRating);

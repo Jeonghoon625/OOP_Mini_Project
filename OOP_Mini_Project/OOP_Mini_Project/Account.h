@@ -5,10 +5,11 @@
 
 class Account
 {
-private:
+protected:
 	int accountNum; // ฐ่มยน๘ศฃ
 	char* name; // ผบวิ
 	int ballance; // ภÜพื
+	Account(const Account& copy);
 
 public:
 	Account(const int& accountNum, const char* name, const int& ballance);

@@ -4,9 +4,10 @@
 
 class AccountHandler
 {
-private:
+protected:
 	Account* accountList[ACCOUNT_MAX];
 	int memberNum;
+	AccountHandler(const AccountHandler* copy);
 
 public:
 	AccountHandler();

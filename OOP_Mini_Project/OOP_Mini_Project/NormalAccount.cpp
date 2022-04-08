@@ -6,6 +6,10 @@ NormalAccount::NormalAccount(const int& accountNum, const char* name, const int&
 	this->interest = interest;
 }
 
+NormalAccount::NormalAccount(const NormalAccount& copy) : Account(copy.accountNum, copy.name, copy.ballance), interest(copy.interest)
+{
+}
+
 void NormalAccount::AddBallance(const int& money)
 {
 	Account::AddBallance(money);

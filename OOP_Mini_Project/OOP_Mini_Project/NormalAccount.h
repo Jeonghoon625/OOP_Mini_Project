@@ -3,8 +3,9 @@
 
 class NormalAccount : public Account
 {
-private:
+protected:
 	int interest; //¿Ã¿⁄
+	NormalAccount(const NormalAccount& copy);
 
 public:
 	NormalAccount(const int& accountNum, const char* name, const int& ballance, const int& interest);

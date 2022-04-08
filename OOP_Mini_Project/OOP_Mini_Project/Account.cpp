@@ -8,6 +8,12 @@ Account::Account(const int& accountNum, const char* name, const int& ballance)
 	this->ballance = ballance;
 }
 
+Account::Account(const Account& copy) : accountNum(copy.accountNum), ballance(copy.ballance)
+{	
+	name = new char[strlen(copy.name) + 1];
+	strcpy_s(name, strlen(copy.name) + 1, copy.name);
+}
+
 int Account::GetaccountNum() const
 {
 	return accountNum;
