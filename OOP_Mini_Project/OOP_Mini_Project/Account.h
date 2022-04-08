@@ -21,7 +21,7 @@ public:
 
 	void TakeBallance(const int& money);
 
-	void ShowAccountInfo() const;
+	virtual void ShowAccountInfo() const;
 
-	~Account();
+	virtual ~Account();
 };

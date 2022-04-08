@@ -5,15 +5,15 @@ HighCreditAccount::HighCreditAccount(const int& accountNum, const char* name, co
 {
 	switch (creditRating)
 	{
-	case 1:
+	case Grade::A :
 		creditRatingResult = 7;
 		break;
 
-	case 2:
+	case Grade::B :
 		creditRatingResult = 4;
 		break;
 
-	case 3:
+	case Grade::C :
 		creditRatingResult = 2;
 		break;
 
@@ -27,4 +27,14 @@ void HighCreditAccount::AddBallance(const int& money)
 {
 	NormalAccount::AddBallance(money);
 	Account::AddBallance(money * creditRatingResult / 100);
+}
+
+void HighCreditAccount::ShowAccountInfo() const
+{
+	NormalAccount::ShowAccountInfo();
+	std::cout << "추가 이자율 : " << creditRatingResult << "%" << std::endl;
+}
+
+HighCreditAccount::~HighCreditAccount()
+{
 }

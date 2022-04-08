@@ -103,4 +103,3 @@ AccountHandler::~AccountHandler()
 		delete accountList[i];
 	}
 }
-

@@ -11,3 +11,13 @@ void NormalAccount::AddBallance(const int& money)
 	Account::AddBallance(money);
 	Account::AddBallance(money * interest / 100);
 }
+
+void NormalAccount::ShowAccountInfo() const
+{
+	Account::ShowAccountInfo();
+	std::cout << "ÀÌÀÚÀ² : " << interest << "%" << std::endl;
+}
+
+NormalAccount::~NormalAccount()
+{
+}
