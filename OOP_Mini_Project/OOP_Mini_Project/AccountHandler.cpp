@@ -1,4 +1,5 @@
 #include "AccountHandler.h"
+#include "BoundCheckPointPtrArray.h"
 
 AccountHandler::AccountHandler() : memberNum(0)
 {

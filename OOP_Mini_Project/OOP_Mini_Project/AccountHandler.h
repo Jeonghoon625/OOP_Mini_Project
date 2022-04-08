@@ -1,5 +1,6 @@
 #pragma once
 #include "HighCreditAccount.h"
+#include "BoundCheckPointPtrArray.h"
 #define ACCOUNT_MAX 10
 
 class AccountHandler
@@ -7,7 +8,7 @@ class AccountHandler
 protected:
 	Account* accountList[ACCOUNT_MAX];
 	int memberNum;
-	AccountHandler(const AccountHandler* copy);
+	AccountHandler(const AccountHandler& copy);
 
 public:
 	AccountHandler();

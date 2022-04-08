@@ -26,3 +26,5 @@ public:
 
 	virtual ~Account();
 };
+
+typedef Account* ACCOUNT_PTR;
