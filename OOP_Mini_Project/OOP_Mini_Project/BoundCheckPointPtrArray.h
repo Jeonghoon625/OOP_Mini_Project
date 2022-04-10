@@ -7,43 +7,16 @@ private:
 	ACCOUNT_PTR* accountArr;
 	int arrLen;
 
-	BoundCheckPointPtrArray(const BoundCheckPointPtrArray& arr) { }
-	BoundCheckPointPtrArray& operator=(const BoundCheckPointPtrArray& arr) { }
+	BoundCheckPointPtrArray(const BoundCheckPointPtrArray& arr);
 
 public:
-	BoundCheckPointPtrArray(int len) :arrLen(len)
-	{
-		accountArr = new ACCOUNT_PTR[len];
-	}
+	BoundCheckPointPtrArray(int len = 10);
 
-	ACCOUNT_PTR& operator[] (int idx)
-	{
-		if (idx < 0 || idx >= arrLen)
-		{
-			std::cout << "Array index out of bound exception" << std::endl;
-			exit(1);
-		}
+	ACCOUNT_PTR& operator[] (int idx);
 
-		return accountArr[idx];
-	}
-	ACCOUNT_PTR operator[] (int idx) const
-	{
-		if (idx < 0 || idx >= arrLen)
-		{
-			std::cout << "Array index out of bound exception" << std::endl;
-			exit(1);
-		}
+	ACCOUNT_PTR operator[] (int idx) const;
 
-		return accountArr[idx];
-	}
+	int GetArrLen() const;
 
-	int GetArrLen() const
-	{
-		return arrLen;
-	}
-
-	~BoundCheckPointPtrArray()
-	{
-		delete[] accountArr;
-	}
+	~BoundCheckPointPtrArray();
 };

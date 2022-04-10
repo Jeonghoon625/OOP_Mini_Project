@@ -5,9 +5,10 @@
 
 class AccountHandler
 {
-protected:
-	Account* accountList[ACCOUNT_MAX];
+private:
+	BoundCheckPointPtrArray accountList;
 	int memberNum;
+
 	AccountHandler(const AccountHandler& copy);
 
 public:

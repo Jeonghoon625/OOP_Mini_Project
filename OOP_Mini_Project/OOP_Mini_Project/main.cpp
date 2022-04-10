@@ -41,6 +41,7 @@ int main()
 
 		default:
 			std::cout << "잘못 입력 하셨습니다." << std::endl;
+			
 			break;
 		}
 	}
@@ -91,7 +92,15 @@ void NewAccount(AccountHandler& handler)
 		std::cout << "이자율: ";
 		std::cin >> interest;
 
-		handler.NewAccount(new NormalAccount(accountNum, name, money, interest));
+		if (handler.FindAccount(accountNum) < 0)
+		{
+			handler.NewAccount(new NormalAccount(accountNum, name, money, interest));
+		}
+		else
+		{
+			std::cout << "이미 동일한 계좌번호로 개설된 계좌가 있습니다." << std::endl;
+		}
+
 		break;
 
 	case 2:
@@ -112,7 +121,15 @@ void NewAccount(AccountHandler& handler)
 		std::cout << "신용등급(1toA, 2toB, 3toC): ";
 		std::cin >> creditRating;
 
-		handler.NewAccount(new HighCreditAccount(accountNum, name, money, interest, creditRating));
+		if (handler.FindAccount(accountNum) < 0)
+		{
+			handler.NewAccount(new HighCreditAccount(accountNum, name, money, interest, creditRating));
+		}
+		else
+		{
+			std::cout << "이미 동일한 계좌번호로 개설된 계좌가 있습니다." << std::endl;
+		}
+
 		break;
 	}
 }

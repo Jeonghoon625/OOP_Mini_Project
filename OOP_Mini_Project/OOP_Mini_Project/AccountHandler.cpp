@@ -9,25 +9,13 @@ AccountHandler::AccountHandler() : memberNum(0)
 	}
 }
 
-AccountHandler::AccountHandler(const AccountHandler& copy) : memberNum(copy.memberNum)
+AccountHandler::AccountHandler(const AccountHandler& copy)
 {
-	for (int i = 0; i < ACCOUNT_MAX; i++)
-	{
-		accountList[i] = copy.accountList[i];
-	}
 }
 
 void AccountHandler::NewAccount(Account* account)
 {
-	if (FindAccount(account->GetaccountNum()) < 0)
-	{
-		accountList[memberNum++] = account;
-	}
-	else
-	{
-		std::cout << "이미 동일한 계좌번호로 개설된 계좌가 있습니다." << std::endl;
-		delete account;
-	}
+	accountList[memberNum++] = account;
 }
 
 int AccountHandler::GetMemberNum() const
@@ -105,7 +93,7 @@ void AccountHandler::ShowAllAccountInfo() const
 	}
 }
 
-AccountHandler::~AccountHandler()
+AccountHandler::~AccountHandler() 
 {
 	for (int i = 0; i < memberNum; i++)
 	{

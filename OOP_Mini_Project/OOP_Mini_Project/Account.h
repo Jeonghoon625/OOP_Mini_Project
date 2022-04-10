@@ -9,10 +9,13 @@ protected:
 	int accountNum; // °èÁÂ¹øÈ£
 	char* name; // ¼ºÇÔ
 	int ballance; // ÀÜ¾×
+
 	Account(const Account& copy);
 
 public:
 	Account(const int& accountNum, const char* name, const int& ballance);
+
+	Account& operator= (const Account& ref);
 
 	int GetaccountNum() const;
 
