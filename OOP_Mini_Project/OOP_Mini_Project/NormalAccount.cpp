@@ -10,6 +10,18 @@ NormalAccount::NormalAccount(const NormalAccount& copy) : Account(copy.accountNu
 {
 }
 
+NormalAccount& NormalAccount::operator= (const NormalAccount& ref)
+{
+	accountNum = ref.accountNum;
+	ballance = ref.ballance;
+	delete[] name;
+	name = new char[strlen(ref.name) + 1];
+	strcpy_s(name, strlen(ref.name) + 1, ref.name);
+	interest = ref.interest;
+
+	return *this;
+}
+
 void NormalAccount::AddBallance(const int& money)
 {
 	Account::AddBallance(money);

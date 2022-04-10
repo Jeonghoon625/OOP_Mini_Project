@@ -5,10 +5,13 @@ class NormalAccount : public Account
 {
 protected:
 	int interest; //¿Ã¿⁄
-	NormalAccount(const NormalAccount& copy);
-
+	
 public:
 	NormalAccount(const int& accountNum, const char* name, const int& ballance, const int& interest);
+
+	NormalAccount(const NormalAccount& copy);
+	
+	NormalAccount& operator= (const NormalAccount& ref);
 
 	virtual void AddBallance(const int& money);
 

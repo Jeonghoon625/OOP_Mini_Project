@@ -10,10 +10,10 @@ protected:
 	char* name; // ผบวิ
 	int ballance; // ภÜพื
 
-	Account(const Account& copy);
-
 public:
 	Account(const int& accountNum, const char* name, const int& ballance);
+
+	Account(const Account& copy);
 
 	Account& operator= (const Account& ref);
 

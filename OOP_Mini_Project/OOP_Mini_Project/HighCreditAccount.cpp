@@ -28,6 +28,19 @@ HighCreditAccount::HighCreditAccount(const HighCreditAccount& copy)
 {
 }
 
+HighCreditAccount& HighCreditAccount::operator= (const HighCreditAccount& ref)
+{
+	accountNum = ref.accountNum;
+	ballance = ref.ballance;
+	delete[] name;
+	name = new char[strlen(ref.name) + 1];
+	strcpy_s(name, strlen(ref.name) + 1, ref.name);
+	interest = ref.interest;
+	creditRatingResult = ref.creditRatingResult;
+
+	return *this;
+}
+
 void HighCreditAccount::AddBallance(const int& money)
 {
 	NormalAccount::AddBallance(money);
