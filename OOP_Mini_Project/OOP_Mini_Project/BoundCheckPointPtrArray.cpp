@@ -8,7 +8,7 @@ BoundCheckArray<T>::BoundCheckArray(const T& arr)
 template <typename T>
 BoundCheckArray<T>::BoundCheckArray(int len) : arrLen(len)
 {
-	accountArr = new ACCOUNT_PTR[len];
+	accountArr = new T[len];
 }
 
 template <typename T>
