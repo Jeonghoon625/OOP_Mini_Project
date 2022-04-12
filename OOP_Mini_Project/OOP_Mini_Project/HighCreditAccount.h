@@ -17,7 +17,7 @@ protected :
 	int creditRatingResult;
 
 public :
-	HighCreditAccount(const int& accountNum, const char* name, const int& ballance, const int& interest, const int& creditRating);
+	HighCreditAccount(const int& accountNum, string name, const int& ballance, const int& interest, const int& creditRating);
 	
 	HighCreditAccount(const HighCreditAccount& copy);
 

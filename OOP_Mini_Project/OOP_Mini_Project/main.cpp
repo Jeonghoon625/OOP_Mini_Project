@@ -1,4 +1,5 @@
 #include "AccountHandler.h"
+#include "BoundCheckPointPtrArray.cpp"
 
 int Menu();
 
@@ -62,8 +63,10 @@ int Menu()
 
 void NewAccount(AccountHandler& handler)
 {
+	mystd::istream cin;
+
 	int accountNum = 0;
-	char name[10] = { 0, };
+	string name;
 	int money = 0;
 	int interest = 0;
 	int creditRating = 0;
@@ -84,7 +87,7 @@ void NewAccount(AccountHandler& handler)
 		std::cin >> accountNum;
 
 		std::cout << "이름: ";
-		std::cin >> name;
+		cin >> name;
 
 		std::cout << "입금액: ";
 		std::cin >> money;
@@ -110,7 +113,7 @@ void NewAccount(AccountHandler& handler)
 		std::cin >> accountNum;
 
 		std::cout << "이름 : ";
-		std::cin >> name;
+		cin >> name;
 
 		std::cout << "입금액 : ";
 		std::cin >> money;

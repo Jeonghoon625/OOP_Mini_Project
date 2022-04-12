@@ -7,7 +7,7 @@ protected:
 	int interest; //¿Ã¿⁄
 	
 public:
-	NormalAccount(const int& accountNum, const char* name, const int& ballance, const int& interest);
+	NormalAccount(const int& accountNum, string name, const int& ballance, const int& interest);
 
 	NormalAccount(const NormalAccount& copy);
 	

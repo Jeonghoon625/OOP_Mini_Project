@@ -1,22 +1,23 @@
 #pragma once
 #include "HighCreditAccount.h"
 
-class BoundCheckPointPtrArray
+template <typename T>
+class BoundCheckArray
 {
 private:
-	ACCOUNT_PTR* accountArr;
+	T* accountArr;
 	int arrLen;
 
-	BoundCheckPointPtrArray(const BoundCheckPointPtrArray& arr);
+	BoundCheckArray(const T& arr);
 
 public:
-	BoundCheckPointPtrArray(int len = 10);
+	BoundCheckArray(int len = 10);
 
-	ACCOUNT_PTR& operator[] (int idx);
+	T& operator[] (int idx);
 
-	ACCOUNT_PTR operator[] (int idx) const;
+	T operator[] (int idx) const;
 
 	int GetArrLen() const;
 
-	~BoundCheckPointPtrArray();
+	~BoundCheckArray();
 };

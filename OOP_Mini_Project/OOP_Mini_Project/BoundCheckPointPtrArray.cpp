@@ -1,15 +1,18 @@
 #include "BoundCheckPointPtrArray.h"
 
-BoundCheckPointPtrArray::BoundCheckPointPtrArray(const BoundCheckPointPtrArray& arr) 
+template <typename T>
+BoundCheckArray<T>::BoundCheckArray(const T& arr)
 { 
 }
 
-BoundCheckPointPtrArray::BoundCheckPointPtrArray(int len) :arrLen(len)
+template <typename T>
+BoundCheckArray<T>::BoundCheckArray(int len) : arrLen(len)
 {
 	accountArr = new ACCOUNT_PTR[len];
 }
 
-ACCOUNT_PTR& BoundCheckPointPtrArray::operator[] (int idx)
+template <typename T>
+T& BoundCheckArray<T>::operator[] (int idx)
 {
 	if (idx < 0 || idx >= arrLen)
 	{
@@ -19,7 +22,9 @@ ACCOUNT_PTR& BoundCheckPointPtrArray::operator[] (int idx)
 
 	return accountArr[idx];
 }
-ACCOUNT_PTR BoundCheckPointPtrArray::operator[] (int idx) const
+
+template <typename T>
+T BoundCheckArray<T>::operator[] (int idx) const
 {
 	if (idx < 0 || idx >= arrLen)
 	{
@@ -30,12 +35,14 @@ ACCOUNT_PTR BoundCheckPointPtrArray::operator[] (int idx) const
 	return accountArr[idx];
 }
 
-int BoundCheckPointPtrArray::GetArrLen() const
+template <typename T>
+int BoundCheckArray<T>::GetArrLen() const
 {
 	return arrLen;
 }
 
-BoundCheckPointPtrArray::~BoundCheckPointPtrArray()
+template <typename T>
+BoundCheckArray<T>::~BoundCheckArray()
 {
 	delete[] accountArr;
 }

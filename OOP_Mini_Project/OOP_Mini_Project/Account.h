@@ -2,16 +2,20 @@
 
 #include <iostream>
 #include <cstring>
+#include "Mystring.h"
+
+using namespace my;
 
 class Account
 {
 protected:
+
 	int accountNum; // 계좌번호
-	char* name; // 성함
+	string name; // 성함
 	int ballance; // 잔액
 
 public:
-	Account(const int& accountNum, const char* name, const int& ballance);
+	Account(const int& accountNum, string name, const int& ballance);
 
 	Account(const Account& copy);
 

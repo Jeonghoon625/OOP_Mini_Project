@@ -6,7 +6,7 @@
 class AccountHandler
 {
 private:
-	BoundCheckPointPtrArray accountList;
+	BoundCheckArray<ACCOUNT_PTR> accountList;
 	int memberNum;
 
 	AccountHandler(const AccountHandler& copy);
@@ -28,4 +28,3 @@ public:
 
 	~AccountHandler();
 };
-

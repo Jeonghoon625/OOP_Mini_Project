@@ -1,6 +1,6 @@
 #include "HighCreditAccount.h"
 
-HighCreditAccount::HighCreditAccount(const int& accountNum, const char* name, const int& ballance, const int& interest, const int& creditRating)
+HighCreditAccount::HighCreditAccount(const int& accountNum, string name, const int& ballance, const int& interest, const int& creditRating)
 	: NormalAccount(accountNum, name, ballance, interest)
 {
 	switch (creditRating)
@@ -32,9 +32,7 @@ HighCreditAccount& HighCreditAccount::operator= (const HighCreditAccount& ref)
 {
 	accountNum = ref.accountNum;
 	ballance = ref.ballance;
-	delete[] name;
-	name = new char[strlen(ref.name) + 1];
-	strcpy_s(name, strlen(ref.name) + 1, ref.name);
+	name = ref.name;
 	interest = ref.interest;
 	creditRatingResult = ref.creditRatingResult;
 

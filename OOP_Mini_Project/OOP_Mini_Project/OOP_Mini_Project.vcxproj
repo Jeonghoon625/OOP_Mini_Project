@@ -144,6 +144,7 @@
     <ClCompile Include="BoundCheckPointPtrArray.cpp" />
     <ClCompile Include="HighCreditAccount.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Mystring.cpp" />
     <ClCompile Include="NormalAccount.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -151,6 +152,7 @@
     <ClInclude Include="AccountHandler.h" />
     <ClInclude Include="BoundCheckPointPtrArray.h" />
     <ClInclude Include="HighCreditAccount.h" />
+    <ClInclude Include="Mystring.h" />
     <ClInclude Include="NormalAccount.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
