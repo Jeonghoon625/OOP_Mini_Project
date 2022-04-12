@@ -1,6 +1,6 @@
 #include "AccountHandler.h"
-#include "BoundCheckPointPtrArray.h"
-#include "BoundCheckPointPtrArray.cpp"
+#include "BoundCheckArray.h"
+#include "BoundCheckArray.cpp"
 
 AccountHandler::AccountHandler() : memberNum(0)
 {

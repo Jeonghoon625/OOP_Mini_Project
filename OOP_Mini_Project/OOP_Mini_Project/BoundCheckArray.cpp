@@ -1,4 +1,4 @@
-#include "BoundCheckPointPtrArray.h"
+#include "BoundCheckArray.h"
 
 template <typename T>
 BoundCheckArray<T>::BoundCheckArray(const T& arr)

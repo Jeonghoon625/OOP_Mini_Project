@@ -1,5 +1,5 @@
 #include "AccountHandler.h"
-#include "BoundCheckPointPtrArray.cpp"
+#include "BoundCheckArray.cpp"
 
 int Menu();
 
