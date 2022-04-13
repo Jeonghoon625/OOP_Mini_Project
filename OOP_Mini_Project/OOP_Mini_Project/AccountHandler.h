@@ -1,6 +1,8 @@
 #pragma once
 #include "HighCreditAccount.h"
 #include "BoundCheckArray.h"
+#include "AccountException.h"
+
 #define ACCOUNT_MAX 10
 
 class AccountHandler

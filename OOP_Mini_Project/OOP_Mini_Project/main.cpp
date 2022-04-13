@@ -1,5 +1,6 @@
 #include "AccountHandler.h"
 #include "BoundCheckArray.cpp"
+#include "AccountException.h"
 
 int Menu();
 
@@ -145,11 +146,22 @@ void Deposit(AccountHandler& handler)
 	int accountNum = 0;
 	std::cin >> accountNum;
 
-	std::cout << "입금액 : ";
-	int money = 0;
-	std::cin >> money;
+	while (1)
+	{
+		std::cout << "입금액 : ";
+		int money = 0;
+		std::cin >> money;
 
-	handler.Deposit(accountNum, money);
+		try
+		{
+			handler.Deposit(accountNum, money);
+			break;
+		}
+		catch (AccountException& expn)
+		{
+			expn.ShowExceptionReason();
+		}
+	}	
 }
 
 void WithDraw(AccountHandler& handler)
@@ -160,9 +172,21 @@ void WithDraw(AccountHandler& handler)
 	int accountNum = 0;
 	std::cin >> accountNum;
 
-	std::cout << "출금액 : ";
-	int money = 0;
-	std::cin >> money;
+	while (1)
+	{
+		std::cout << "출금액 : ";
+		int money = 0;
+		std::cin >> money;
 
-	handler.WithDraw(accountNum, money);
+		try
+		{
+			handler.WithDraw(accountNum, money);
+			break;
+		}
+		catch (AccountException& expn)
+		{
+			expn.ShowExceptionReason();
+		}
+	}
+	
 }

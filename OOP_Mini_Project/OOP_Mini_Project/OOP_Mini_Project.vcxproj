@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Account.cpp" />
+    <ClCompile Include="AccountException.cpp" />
     <ClCompile Include="AccountHandler.cpp" />
     <ClCompile Include="BoundCheckArray.cpp" />
     <ClCompile Include="HighCreditAccount.cpp" />
@@ -149,6 +150,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Account.h" />
+    <ClInclude Include="AccountException.h" />
     <ClInclude Include="AccountHandler.h" />
     <ClInclude Include="BoundCheckArray.h" />
     <ClInclude Include="HighCreditAccount.h" />

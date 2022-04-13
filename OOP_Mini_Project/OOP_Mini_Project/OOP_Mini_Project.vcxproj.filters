@@ -36,6 +36,9 @@
     <ClCompile Include="Mystring.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="AccountException.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Account.h">
@@ -54,6 +57,9 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Mystring.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="AccountException.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>

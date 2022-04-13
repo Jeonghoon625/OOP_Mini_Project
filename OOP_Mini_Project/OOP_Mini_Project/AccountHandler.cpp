@@ -10,7 +10,7 @@ AccountHandler::AccountHandler() : memberNum(0)
 	}
 }
 
-AccountHandler::AccountHandler(const AccountHandler& copy)
+AccountHandler::AccountHandler(const AccountHandler& copy) // prevent copy generate
 {
 }
 
@@ -47,7 +47,8 @@ void AccountHandler::Deposit(const int& accountNum, const int& money)
 	}
 	else if (money < 0)
 	{
-		std::cout << "입금액이 0보다 작을 수는 없습니다." << std::endl;
+		DepositException expn(money);
+		throw expn;
 	}
 	else
 	{
@@ -66,11 +67,13 @@ void AccountHandler::WithDraw(const int& accountNum, const int& money)
 	}
 	else if (money < 0)
 	{
-		std::cout << "출금액이 0보다 작을 수는 없습니다." << std::endl;
+		WithDrawException expn(money);
+		throw expn;
 	}
 	else if (accountList[find_idx]->GetBallance() < money)
 	{
-		std::cout << "잔액이 부족합니다." << std::endl;
+		WithDrawException expn(money);
+		throw expn;
 	}
 	else
 	{
