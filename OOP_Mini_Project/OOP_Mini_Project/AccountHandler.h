@@ -18,6 +18,8 @@ public:
 
 	void NewAccount(Account* account);
 
+	void DeleteAccount(const int find_idx);
+
 	int GetMemberNum() const;
 
 	int FindAccount(const int& acccountNum) const;

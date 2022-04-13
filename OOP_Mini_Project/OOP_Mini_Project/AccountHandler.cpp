@@ -6,7 +6,7 @@ AccountHandler::AccountHandler() : memberNum(0)
 {
 	for (int i = 0; i < ACCOUNT_MAX; i++)
 	{
-		accountList[i] = NULL;
+		accountList[i] = nullptr;
 	}
 }
 
@@ -95,6 +95,30 @@ void AccountHandler::ShowAllAccountInfo() const
 			accountList[i]->ShowAccountInfo();
 		}
 	}
+}
+
+void AccountHandler::DeleteAccount(const int find_idx)
+{
+	delete accountList[find_idx];
+	accountList[find_idx] = nullptr;
+
+	if (find_idx != memberNum - 1)
+	{
+		for (int i = find_idx; i < memberNum; i++)
+		{
+			if (find_idx < memberNum - 1)
+			{
+				accountList[i] = accountList[i + 1];
+			}
+			else
+			{
+				accountList[i] = nullptr;
+			}
+		}
+	}
+
+	memberNum--;
+	std::cout << "삭제되었습니다." << std::endl;
 }
 
 AccountHandler::~AccountHandler() 

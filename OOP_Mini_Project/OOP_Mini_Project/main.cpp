@@ -6,6 +6,8 @@ int Menu();
 
 void NewAccount(AccountHandler& handler);
 
+void DeleteAccount(AccountHandler& handler);
+
 void Deposit(AccountHandler& handler);
 
 void WithDraw(AccountHandler& handler);
@@ -18,7 +20,7 @@ int main()
 	{
 		int menuNum = Menu();
 
-		if (menuNum == 5)
+		if (menuNum == 6)
 		{
 			break;
 		}
@@ -41,6 +43,10 @@ int main()
 			handler.ShowAllAccountInfo();
 			break;
 
+		case 5:
+			DeleteAccount(handler);
+			break;
+
 		default:
 			std::cout << "잘못 입력 하셨습니다." << std::endl;
 			
@@ -54,7 +60,7 @@ int Menu()
 	std::cout << std::endl;
 	std::cout << "=Menu=" << std::endl;
 	std::cout << "1. 계좌개설\n" << "2. 입 금\n" << "3. 출 금\n"
-		<< "4. 계좌정보 전체 출력\n" << "5. 프로그램 종료\n" 
+		<< "4. 계좌정보 전체 출력\n" << "5. 계좌정보 삭제\n" << "6. 프로그램 종료\n" 
 		<< "선택 : ";
 	int menuNum = 0;
 	std::cin >> menuNum;
@@ -135,6 +141,25 @@ void NewAccount(AccountHandler& handler)
 		}
 
 		break;
+	}
+}
+
+void DeleteAccount(AccountHandler& handler)
+{
+	int accountNum = 0;
+
+	std::cout << "\n[삭제할 계좌 번호 입력]" << std::endl;
+	std::cin >> accountNum;
+
+	int find_idx = handler.FindAccount(accountNum);
+
+	if (find_idx < 0)
+	{
+		std::cout << "해당하는 계좌가 존재하지 않습니다." << std::endl;
+	}
+	else
+	{
+		handler.DeleteAccount(find_idx);
 	}
 }
 
