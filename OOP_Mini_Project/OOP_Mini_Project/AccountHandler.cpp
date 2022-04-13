@@ -98,24 +98,16 @@ void AccountHandler::ShowAllAccountInfo() const
 }
 
 void AccountHandler::DeleteAccount(const int find_idx)
-{
+{ 
 	delete accountList[find_idx];
 	accountList[find_idx] = nullptr;
 
-	if (find_idx != memberNum - 1)
+	for (int i = find_idx; i < memberNum - 1; i++)
 	{
-		for (int i = find_idx; i < memberNum; i++)
-		{
-			if (find_idx < memberNum - 1)
-			{
-				accountList[i] = accountList[i + 1];
-			}
-			else
-			{
-				accountList[i] = nullptr;
-			}
-		}
+		accountList[i] = accountList[i + 1];
 	}
+
+	accountList[memberNum - 1] = nullptr;
 
 	memberNum--;
 	std::cout << "삭제되었습니다." << std::endl;
